@@ -89,7 +89,7 @@ class App extends Component{
                 </Button>
                 <Container className="themed-container" fluid="lg">
                 {this.state.visible ? 
-                <Output Shortenurl={this.state.Shortenurl} onClick={this.getUserurl} visible={this.state.qrcodeVisible}/>:
+                <Output Shortenurl={this.state.Shortenurl} onClick={this.getAPi} visible={this.state.qrcodeVisible}/>:
                 <Qrcode userurl={this.state.Longurl} onClick={this.getUserurl} visible={this.state.qrcodeVisible}/>}
                </Container>
                    
