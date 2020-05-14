@@ -2,13 +2,17 @@ import React from 'react'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import TextField from '@material-ui/core/TextField';
 import  Button  from 'react-bootstrap/Button';
+import {Row,Col} from 'reactstrap'
 
 
 function Output(props){
     return(<div className='p-5 '>
 
-<form onSubmit={props.onClick}>
-        <TextField
+
+         <form onSubmit={props.onClick}>
+         <Row>
+         <Col sm={8}>
+         <TextField
           required
           id="outlined-full-width"
           label=""
@@ -24,14 +28,24 @@ function Output(props){
           name="Url"
           variant="outlined"
         />
-        </form>
-
+         
+        
+        </Col>
+         <Col sm={4}>
+        
+         <Button variant="primary" size="lg" style={{ margin: 8 }} type="submit" block>
+           Submit
+         </Button>
+        
+         </Col>
+         </Row>
+         </form>
+          
         <TextField
           
           id="outlined-full-width"
           label=""
           style={{ margin:5}}
-          placeholder={props.Shortenurl}
           helperText=""
           fullWidth
           margin="normal"
@@ -39,9 +53,9 @@ function Output(props){
             shrink: true,
             
           }}
-         
           variant="outlined"
-          readOnly
+          value={props.Shortenurl}
+          disabled
         />
 
         <CopyToClipboard text={props.Shortenurl}>
